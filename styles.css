@@ -390,9 +390,10 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: 0;
   overflow: hidden;
+  perspective: none;
   background-color: #3a3228;
 }
 
@@ -417,6 +418,9 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
+  transform: none !important;
+  transition: none !important;
+  will-change: auto;
 }
 
 .hero__content {
@@ -424,7 +428,7 @@ a {
   z-index: 2;
   text-align: center;
   color: var(--color-white);
-  padding: 0 var(--spacing-md) var(--spacing-lg);
+  padding: 15vh var(--spacing-md) var(--spacing-lg);
   width: 100%;
 }
 
@@ -469,7 +473,10 @@ a {
 
 /* ─── Countdown ─── */
 .countdown {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 2;
   padding: var(--spacing-lg) var(--spacing-md) calc(var(--spacing-lg) + var(--safe-bottom));
   text-align: center;
@@ -566,6 +573,75 @@ a {
   content: "故 ";
   font-size: 0.75em;
   opacity: 0.6;
+}
+
+
+/* ═══════════════════════════════════════════
+   Contact Section
+   ═══════════════════════════════════════════ */
+.contact-section {
+  background-color: var(--color-bg);
+}
+
+.contact__container {
+  background: var(--color-bg-card);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.contact__group { 
+   display: flex; 
+   flex-direction: column; 
+   gap: 8px; 
+}
+
+.contact__label { 
+   font-size: 0.8rem; 
+   color: var(--color-accent); 
+   letter-spacing: 1px; 
+   margin-bottom: 5px; 
+}
+
+.contact__item { 
+   display: flex; 
+   justify-content: space-between; 
+   align-items: center; 
+   padding: 8px 0; 
+}
+
+.contact__person .role { 
+   font-size: 0.75rem; 
+   color: var(--color-text-light); 
+   margin-right: 6px; 
+}
+
+.contact__person .name { 
+   font-size: 0.95rem; 
+   font-weight: 500; 
+}
+
+.contact__actions { 
+   display: flex; 
+   gap: 10px; 
+}
+
+.contact__btn { 
+   width: 34px;
+   height: 34px; 
+   border-radius: 50%; 
+   background: var(--color-bg-warm); 
+   color: var(--color-accent-dark);
+   display: flex; 
+   align-items: center; 
+   justify-content: center;
+}
+
+.contact__divider { 
+   height: 1px; 
+   background: var(--color-divider); 
+   margin: 15px 0; 
+   opacity: 0.5; 
 }
 
 /* ═══════════════════════════════════════════
@@ -687,7 +763,7 @@ a {
 
 .story__photo-item img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   transition: transform var(--transition-slow);
 }
@@ -780,7 +856,7 @@ a {
 
 .location__map-img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
@@ -788,6 +864,55 @@ a {
   display: flex;
   gap: var(--spacing-sm);
   justify-content: center;
+}
+
+/* ═══════════════════════════════════════════
+   Transport Section
+═══════════════════════════════════════════ */
+
+.transport {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg-card);
+  text-align: left;
+}
+
+.transport__item {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.transport__item:last-child {
+  border-bottom: none;
+}
+
+.transport__icon {
+  flex-shrink: 0;
+  color: var(--color-accent);
+  margin-top: 2px;
+}
+
+.transport__label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+
+.transport__text {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--color-text-light);
+  line-height: 1.8;
+  white-space: pre-line;
 }
 
 /* ═══════════════════════════════════════════
@@ -1105,7 +1230,7 @@ a {
   }
 
   .story__photo-item img {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 3 / 4;
   }
 
   .section__title {
