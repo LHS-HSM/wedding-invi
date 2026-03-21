@@ -20,8 +20,11 @@ const CONFIG = {
   groom: {
     name: "해석",
     nameEn: "HeaSeok",
+    phone: "010-2044-5513", // 추가
     father: "이영국",
+    fatherPhone: "010-1111-2222", // 추가
     mother: "류순미",
+    motherPhone: "010-3333-4444", // 추가
     fatherDeceased: false,
     motherDeceased: false
   },
@@ -29,8 +32,11 @@ const CONFIG = {
   bride: {
     name: "수민",
     nameEn: "SooMin",
+    phone: "010-4908-5752", // 추가
     father: "한주학",
+    fatherPhone: "010-2144-5752", // 추가
     mother: "홍연화",
+    motherPhone: "010-2837-5752", // 추가
     fatherDeceased: false,
     motherDeceased: false
   },
@@ -62,6 +68,13 @@ const CONFIG = {
 
   // ── 오시는 길 ──
   // (mapLinks는 wedding 객체 내에 포함)
+  // 오시는 길 안내 문구 추가
+    transport: {
+      subway: "수인분당선 기흥역\n\n- 도보 이용시 : 수인분당선 기흥역 2번 출구 도보 400m\n- 셔틀 이용시 : 기흥역 1번 출구 셔틀버스 승차",
+      bus: "기흥역.백남준아트센터 정류장 하차\n\n(일반 10, 55, 66, 66-4, 94, 690, 820\n직행 5000A, 5000B, 5001, 5003A, 5003B, 5005, 5600)",
+      parking: "ICT밸리컨벤션 지하 주차장 이용\n동시 주차 1,600대 가능 (무료)"
+    }
+  },
 
   // ── 마음 전하실 곳 ──
   accounts: {
@@ -72,8 +85,8 @@ const CONFIG = {
     ],
     bride: [
       { role: "신부", name: "한수민", bank: "신한은행", number: "110-309-464725" },
-      { role: "아버지", name: "한주학", bank: "기업은행", number: "000-000-000000" },
-      { role: "어머니", name: "홍연화", bank: "농협은행", number: "000-000-000000" }
+      { role: "아버지", name: "한주학", bank: "국민은행", number: "027-21-0459-261" },
+      { role: "어머니", name: "홍연화", bank: "농협은행", number: "302-2837-5752-91" }
     ]
   },
 
