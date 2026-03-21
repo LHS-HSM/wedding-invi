@@ -18,40 +18,40 @@ const CONFIG = {
 
   // ── 메인 (히어로) ──
   groom: {
-    name: "신랑",
-    nameEn: "Groom",
-    father: "여기서이렇게이름을바꾸시면됩니다",
-    mother: "어머니",
+    name: "해석",
+    nameEn: "HeaSeok",
+    father: "이영국",
+    mother: "류순미",
     fatherDeceased: false,
     motherDeceased: false
   },
 
   bride: {
-    name: "신부",
-    nameEn: "Bride",
-    father: "아버지",
-    mother: "어머니",
+    name: "수민",
+    nameEn: "Soomin",
+    father: "한주학",
+    mother: "홍연화",
     fatherDeceased: false,
     motherDeceased: false
   },
 
   wedding: {
-    date: "2026-05-09",
-    time: "13:00",
-    venue: "예식장 이름",
-    hall: "그랜드홀 5층",
-    address: "서울특별시 강남구 테헤란로 123",
-    tel: "02-1234-5678",
+    date: "2026-06-21",
+    time: "14:00",
+    venue: "ICT밸리컨벤션",
+    hall: "그랑데홀",
+    address: "경기 용인시 기흥구 기흥로 58-1\n기흥ICT밸리 A동 Lobby ICT밸리컨벤션",
+    tel: "031-630-3600",
     mapLinks: {
-      kakao: "https://map.kakao.com/",
-      naver: "https://map.naver.com/"
+      kakao: "https://kko.to/vfHxpfEWag",
+      naver: "https://naver.me/xucpDpQz"
     }
   },
 
   // ── 인사말 ──
   greeting: {
     title: "소중한 분들을 초대합니다",
-    content: "서로 다른 길을 걸어온 두 사람이\n이제 같은 길을 함께 걸어가려 합니다.\n\n저희의 새로운 시작을\n축복해 주시면 감사하겠습니다."
+    content: "서로의 삶에 따스한 빛이 되어\n믿음과 사랑으로 함께 걸어온 두 사람이\n이제 부부의 연으로 새로운 길을 시작합니다.\n\n소중한 자리 귀한 발걸음으로 오셔서\n저희의 시작을 축복해 주시기 바랍니다."
   },
 
   // ── 우리의 이야기 ──
@@ -66,20 +66,20 @@ const CONFIG = {
   // ── 마음 전하실 곳 ──
   accounts: {
     groom: [
-      { role: "신랑", name: "홍길동", bank: "국민은행", number: "000-000-000000" },
-      { role: "아버지", name: "홍판서", bank: "신한은행", number: "000-000-000000" },
-      { role: "어머니", name: "김부인", bank: "우리은행", number: "000-000-000000" }
+      { role: "신랑", name: "이해석", bank: "국민은행", number: "000-000-000000" },
+      { role: "아버지", name: "이영국", bank: "신한은행", number: "000-000-000000" },
+      { role: "어머니", name: "류순미", bank: "우리은행", number: "000-000-000000" }
     ],
     bride: [
-      { role: "신부", name: "김영희", bank: "하나은행", number: "000-000-000000" },
-      { role: "아버지", name: "김사장", bank: "기업은행", number: "000-000-000000" },
-      { role: "어머니", name: "이부인", bank: "농협은행", number: "000-000-000000" }
+      { role: "신부", name: "한수민", bank: "신한은행", number: "110-309-464725" },
+      { role: "아버지", name: "한주학", bank: "국민은행", number: "027-21-0459-261" },
+      { role: "어머니", name: "홍연화", bank: "농협은행", number: "302-2837-5752-91" }
     ]
   },
 
   // ── 링크 공유 시 나타나는 문구 ──
   meta: {
-    title: "신랑 ♥ 신부 결혼합니다",
-    description: "2025년 1월 1일, 소중한 분들을 초대합니다."
+    title: "해석 ♥ 수민 결혼합니다",
+    description: "2026년 6월 21일, 소중한 분들을 초대합니다."
   }
 };
