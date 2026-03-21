@@ -40,10 +40,10 @@ const CONFIG = {
     time: "14:00",
     venue: "ICT밸리컨벤션",
     hall: "그랑데홀",
-    address: "경기 용인시 기흥구 기흥로 58-1\n기흥ICT밸리 A동 Lobby ICT밸리컨벤션",
+    address: "경기 용인시 기흥구 기흥로 58-1\n기흥ICT밸리 A동 Lobby",
     tel: "031-630-3600",
     mapLinks: {
-      kakao: "https://kko.to/vfHxpfEWag",
+      kakao: "https://place.map.kakao.com/641722539",
       naver: "https://naver.me/xucpDpQz"
     }
   },
