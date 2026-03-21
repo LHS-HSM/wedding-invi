@@ -324,6 +324,40 @@
   }
 
   /* ═══════════════════════════════════════════
+     Contact Section
+     ═══════════════════════════════════════════ */
+  
+  function initContact() {
+    const g = CONFIG.groom;
+    const b = CONFIG.bride;
+  
+    const createContactHTML = (role, name, phone) => `
+      <div class="contact__item">
+        <div class="contact__person">
+          <span class="role">${role}</span>
+          <span class="name">${name}</span>
+        </div>
+        <div class="contact__actions">
+          <a href="tel:${phone}" class="contact__btn" aria-label="전화">&#9990;</a>
+          <a href="sms:${phone}" class="contact__btn" aria-label="문자">&#9993;</a>
+        </div>
+      </div>
+    `;
+  
+    // 신랑측 연락처 리스트
+    $('#groomContactList').innerHTML = 
+      createContactHTML('신랑', g.name, g.phone) +
+      createContactHTML('아버지', g.father, g.fatherPhone) +
+      createContactHTML('어머니', g.mother, g.motherPhone);
+  
+    // 신부측 연락처 리스트
+    $('#brideContactList').innerHTML = 
+      createContactHTML('신부', b.name, b.phone) +
+      createContactHTML('아버지', b.father, b.fatherPhone) +
+      createContactHTML('어머니', b.mother, b.motherPhone);
+  }
+  
+  /* ═══════════════════════════════════════════
      Calendar Section
      ═══════════════════════════════════════════ */
 
@@ -570,6 +604,13 @@
     });
   }
 
+  function initLocationInfo() {
+    const t = CONFIG.wedding.transport;
+      $('#infoSubway').textContent = t.subway;
+      $('#infoBus').textContent = t.bus;
+      $('#infoParking').textContent = t.parking;
+    } 
+
   /* ═══════════════════════════════════════════
      Account Section (축의금)
      ═══════════════════════════════════════════ */
@@ -705,6 +746,8 @@
     initCountdown();
     initGreeting();
     initCalendar();
+    initContact();       // 연락처 초기화 추가
+    initLocationInfo();  // 교통안내 초기화 추가
 
     // Show loading placeholders while detecting images
     showLoadingPlaceholders();
