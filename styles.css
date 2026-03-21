@@ -569,6 +569,74 @@ a {
 }
 
 /* ═══════════════════════════════════════════
+   Contact Section
+   ═══════════════════════════════════════════ */
+
+.contact__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  background: var(--color-bg-card);
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+}
+
+.contact__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.contact__label {
+  font-size: 0.8125rem;
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.contact__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.contact__person {
+  font-size: 0.9375rem;
+}
+
+.contact__person .role {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  margin-right: 0.5rem;
+}
+
+.contact__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.contact__btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-bg-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  color: var(--color-accent-dark);
+  transition: var(--transition);
+}
+
+.contact__divider {
+  height: 1px;
+  background: var(--color-divider);
+  opacity: 0.5;
+}
+
+/* ═══════════════════════════════════════════
    Calendar Section
    ═══════════════════════════════════════════ */
 .calendar-section {
@@ -737,6 +805,26 @@ a {
 
 .location__info {
   margin-bottom: var(--spacing-md);
+  text-align: left;
+  border-top: 1px solid var(--color-divider);
+  padding-top: var(--spacing-lg);
+}
+
+.info-item {
+  margin-bottom: var(--spacing-md);
+}
+
+.info-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-accent-dark);
+  margin-bottom: 0.25rem;
+}
+
+.info-desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
 }
 
 .location__venue {
