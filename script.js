@@ -117,7 +117,6 @@
     };
     setMeta('property', 'og:title', m.title);
     setMeta('property', 'og:description', m.description);
-    setMeta('property', 'og:image', 'images/og/1.jpg');
     setMeta('name', 'description', m.description);
   }
 
@@ -323,6 +322,38 @@
     $('#greetingParents').innerHTML = parentsHTML;
   }
 
+/* ═══════════════════════════════════════════
+   Contact Section & Location Info
+   ═══════════════════════════════════════════ */
+
+function initContact() {
+  const contactData = CONFIG.contact;
+  if (!contactData) return;
+
+  $('#contactTitle').textContent = contactData.title;
+
+  const createContactRow = (item) => `
+    <div class="contact__item">
+      <div class="contact__person">
+        <span class="role">${item.role}</span>
+        <span class="name">${item.name}</span>
+      </div>
+      <div class="contact__actions">
+        <a href="tel:${item.phone}" class="contact__btn" aria-label="전화">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.72 11.72 0 003.7.59 1 1 0 011 1V20a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1h3.38a1 1 0 011 1 11.72 11.72 0 00.59 3.7 1 1 0 01-.27 1.11l-2.2 2.2z"/></svg>
+        </a>
+        <a href="sms:${item.phone}" class="contact__btn" aria-label="문자">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-5H6V7h12v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  `;
+
+  $('#groomContactList').innerHTML = contactData.groom.map(item => createContactRow(item)).join('');
+  $('#brideContactList').innerHTML = contactData.bride.map(item => createContactRow(item)).join('');
+}
+
+  
   /* ═══════════════════════════════════════════
      Calendar Section
      ═══════════════════════════════════════════ */
@@ -406,7 +437,7 @@
       a.click();
       URL.revokeObjectURL(url);
       showToast('캘린더 파일이 다운로드됩니다');
-    });
+    });    
   }
 
   /* ═══════════════════════════════════════════
@@ -568,6 +599,13 @@
     $('#copyAddressBtn').addEventListener('click', () => {
       copyToClipboard(w.address, '주소가 복사되었습니다');
     });
+      // transport 상세 안내
+    if (CONFIG.transport) {
+      const t = CONFIG.transport;
+      if (t.subway) $('#subwayText').textContent = t.subway;
+      if (t.bus)    $('#busText').textContent = t.bus;
+      if (t.parking) $('#parkingText').textContent = t.parking;
+    }
   }
 
   /* ═══════════════════════════════════════════
@@ -705,6 +743,7 @@
     initCountdown();
     initGreeting();
     initCalendar();
+    initContact();       // 연락처 초기화 추가
 
     // Show loading placeholders while detecting images
     showLoadingPlaceholders();
